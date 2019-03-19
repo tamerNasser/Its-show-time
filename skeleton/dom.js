@@ -6,25 +6,47 @@
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
 
-  var state = [
-    { id: -3,name:'first1', desc: 'first todo',done:false},
-    { id: -2,name:'second2', desc: 'second todo',done:false },
-    { id: -1,name:'third3', desc: 'third todo',done:false },
+  var state = [{
+      id: -3,
+      name: 'first1',
+      desc: 'first todo',
+      done: false
+    },
+    {
+      id: -2,
+      name: 'second2',
+      desc: 'second todo',
+      done: false
+    },
+    {
+      id: -1,
+      name: 'third3',
+      desc: 'third todo',
+      done: false
+    },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
-  var createTodoNode = function(todo) {
-    var todoNode = document.createElement('li');
-    // you will need to use addEventListener
+  let createTodoNode = function(todo) {
+    let todoNode = document.createElement('li');
+    todoNode.className = 'todo-items';
 
-    // add span holding desc
 
-    // this adds the delete button
+    let todoNameNode = document.createElement('p');
+    todoNameNode.className = 'todo-name';
+    let todoDescNode = document.createElement('p');
+    todoDescNode.className = 'todo-desc';
+
     var deleteButtonNode = document.createElement('button');
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
     });
+    todoNameNode.innerText = todo.name;
+    todoDescNode.innerText = todo.desc;
+
+    todoNode.appendChild(todoNameNode);
+    todoNode.appendChild(todoDescNode);
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
@@ -41,12 +63,12 @@
       // what does event.preventDefault do?
       // what is inside event.target?
       event.preventDefault();
-       var description = '?'; // event.target ....
-       let todoObj ={};
-       todoObj.name=document.getElementById('inputName').value;
-       todoObj.desc = "testDesc";
+      var description = '?'; // event.target ....
+      let todoObj = {};
+      todoObj.name = document.getElementById('inputName').value;
+      todoObj.desc = "testDesc";
       // hint: todoFunctions.addTodo
-      var newState =todoFunctions.addTodo(state,todoObj); // ?? change this!
+      var newState = todoFunctions.addTodo(state, todoObj); // ?? change this!
       update(newState);
 
     });
