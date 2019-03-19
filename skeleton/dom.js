@@ -7,9 +7,9 @@
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    { id: -3,name:'first1', desc: 'first todo',done:false},
+    { id: -2,name:'second2', desc: 'second todo',done:false },
+    { id: -1,name:'third3', desc: 'third todo',done:false },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -17,7 +17,7 @@
     var todoNode = document.createElement('li');
     // you will need to use addEventListener
 
-    // add span holding description
+    // add span holding desc
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
@@ -40,12 +40,15 @@
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
       // what does event.preventDefault do?
       // what is inside event.target?
-
-      var description = '?'; // event.target ....
-
+      event.preventDefault();
+       var description = '?'; // event.target ....
+       let todoObj ={};
+       todoObj.name=document.getElementById('inputName').value;
+       todoObj.desc = "testDesc";
       // hint: todoFunctions.addTodo
-      var newState = []; // ?? change this!
+      var newState =todoFunctions.addTodo(state,todoObj); // ?? change this!
       update(newState);
+
     });
   }
 
