@@ -67,12 +67,9 @@ test("Testing - adding todo", function(t) {
       desc: "don't forget to eat salaaadd3",
       done: false
     }
-  ],
-   {
-    id: 4,
+  ], {
     name: "don't eat lunch",
-    desc: " forget to eat salaaadd",
-    done: false
+    desc: " forget to eat salaaadd"
   });
   var expected = [{
       id: 1,
@@ -93,12 +90,49 @@ test("Testing - adding todo", function(t) {
       done: false
     },
     {
-      id: 4,
+      id: 1,
       name: "don't eat lunch",
       desc: " forget to eat salaaadd",
       done: false
     }
   ];
- t.deepEqual(actual, expected, "Should return the todos array with the new todo object");
- t.end();
+  t.deepEqual(actual, expected, "Should return the todos array with the new todo object");
+  t.end();
+});
+
+test('Testing - deleting todo', function(t) {
+  var actual = logic.deleteTodo([{
+      id: 1,
+      name: "eat lunch",
+      desc: "don't forget to eat salaaadd",
+      done: false
+    },
+    {
+      id: 2,
+      name: "eat lunch2",
+      desc: "don't forget to eat salaaadd2",
+      done: true
+    },
+    {
+      id: 3,
+      name: "eat lunch3",
+      desc: "don't forget to eat salaaadd3",
+      done: false
+    }
+  ], 2);
+  var expected = [{
+      id: 1,
+      name: "eat lunch",
+      desc: "don't forget to eat salaaadd",
+      done: false
+    },
+    {
+      id: 3,
+      name: "eat lunch3",
+      desc: "don't forget to eat salaaadd3",
+      done: false
+    }
+  ];
+  t.deepEqual(actual, expected, 'Should return the arra without the deleted todo');
+  t.end();
 });
