@@ -2,7 +2,7 @@ var test = require("tape");
 var logic = require("./logic");
 
 test("Testing cloneArrayOfObjects return value", function(t) {
-  let actual = logic.cloneArrayOfObjects([
+  let actual = secret.cloneArrayOfObjects([
     {
       id: 1,
       name: "eat lunch",
