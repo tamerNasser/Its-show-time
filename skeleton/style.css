@@ -1,0 +1,96 @@
+html {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+hr {
+  margin-top: 0.5rem;
+  opacity: 0.5;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background: red;
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  content: "\2714";
+  height: 10vh;
+  font-size: 70px;
+  width: 10vw;
+  align-self: center;
+}
+
+input[type="checkbox"] + label {
+  display: inherit;
+  align-self: center;
+  text-align: center;
+  position: absolute;
+}
+
+input[type="checkbox"] {
+  height: 10vh;
+  z-index: 2;
+  opacity: 0;
+  width: 10vw;
+  align-self: center;
+}
+
+.todo-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: block;
+  padding: 40px;
+  margin-top: 10%;
+  border: 1px black solid;
+  border-radius: 10px;
+}
+
+li h3 {
+  margin: 0;
+  text-align: center;
+  color: #141414;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2.25rem;
+}
+
+.deleteBtn {
+  background: url(./delete.png);
+  background-size: cover;
+  border-radius: 50%;
+  width: 50px;
+  border: 0;
+  height: 50px;
+}
+
+li p {
+  margin: 1rem;
+  font-size: 1.35rem;
+  color: #666;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.page-title {
+  margin-top: 3%;
+  color: #141414;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#todo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
