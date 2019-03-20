@@ -78,6 +78,7 @@
     deleteButton.value = todo.id;
     let editButton = document.createElement("button");
     editButton.className = "editBtn";
+    editButton.value = todo.id;
     checkButton.addEventListener("click", function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
 
@@ -170,14 +171,27 @@
       document.getElementById("popupAddTodo").style.display = "flex";
     });
     deleteTodoSetup();
+    editTodoSetup();
 })();
 
 function deleteTodoSetup(){
   for (let i = 0; i < document.getElementsByClassName("deleteBtn").length; i++) {
     document
       .getElementsByClassName("deleteBtn")[i].addEventListener("click", function() {
+
         document.getElementById("popupRemoveTodo").style.display = "flex";
         document.getElementById("deletetodo").name = this.value;
+      });
+  }
+}
+function editTodoSetup(){
+  for (let i = 0; i < document.getElementsByClassName("editBtn").length; i++) {
+
+    document
+      .getElementsByClassName("editBtn")[i].addEventListener("click", function() {
+        document.getElementById("popupEditTodo").style.display = "flex";
+        document.getElementById("edittodo").name = document
+        .getElementsByClassName("editBtn")[i].value;
       });
   }
 }
