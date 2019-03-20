@@ -68,6 +68,7 @@ test("Testing - adding todo", function(t) {
   t.end();
 });
 
+
 test('Testing - deleting todo', function(t) {
   var actual = logic.deleteTodo([{
       id: 1,
