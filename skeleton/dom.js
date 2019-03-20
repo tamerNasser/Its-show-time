@@ -153,5 +153,11 @@
     renderState(sortedState);
   }
 
-  //  sortTodosFunction();
+    document.getElementById('btnClose').addEventListener("click",function(){
+        document.getElementById('popupAddTodo').style.display="none";
+  })
+  document.getElementById('floating-button').addEventListener("click",function(){
+      document.getElementById('popupAddTodo').style.display="flex";
+  })
+
 })();

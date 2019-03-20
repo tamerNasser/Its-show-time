@@ -206,3 +206,64 @@ body {
   justify-content: center;
   margin-bottom: 5%;
 }
+#floating-button{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+
+}
+.plusBtn{
+  width: 60px;
+  height: 60px;
+}
+
+.popupAdd{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.popupAdd > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    width: 60%;
+    position: fixed;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupAddContent{
+  display: flex;
+}
+.popupCloseButton {
+    background-color: red;
+    border-color:solid black;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: red;
+}
