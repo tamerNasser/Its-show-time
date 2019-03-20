@@ -290,12 +290,18 @@ select::-ms-expand {
 }
 
 #add-todo input[type="submit"] {
-  font-size: 20px;
   width: 40%;
   margin: 5px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
 }
 #add-todo label[for="submit"] {
-  display:none;
+  display: none;
   color: red;
   font-size: 18px;
 }
