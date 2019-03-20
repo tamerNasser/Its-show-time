@@ -352,7 +352,8 @@ select::-ms-expand {
   display: inline-block;
   font-size: 16px;
 }
-#add-todo label[for="submit"] {
+#add-todo label[for="submit"],
+#edit-todo label[for="edittodo"] {
   display: none;
   color: red;
   font-size: 18px;
