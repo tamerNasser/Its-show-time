@@ -21,26 +21,31 @@
           <option value="0">Sort by:</option>
           <option value="1">Recent</option>
           <option value="2">Done</option>
-          <option value="2">Not Done</option>
+          <option value="3">Not Done</option>
         </select>
       </div>
     </div>
     <div id="todo-container">&nbsp;</div>
 
-
     <div id="popupAddTodo" class="popupAdd">
       <div class="popupAddContent">
         <div id="btnClose" class="popupCloseButton">X</div>
         <form id="add-todo">
-
           <label for="inputName">Name:</label>
           <input id="inputName" type="text" name="description" value="" />
 
           <label for="inputDescription">Description:</label>
-          <input id="inputDescription" type="text" name="description" value="" />
+          <input
+            id="inputDescription"
+            type="text"
+            name="description"
+            value=""
+          />
 
           <input type="submit" name="" value="Submit" /><br />
-          <label id="addtodoError" for="submit">Name or description is very long</label>
+          <label id="addtodoError" for="submit"
+            >Name or description is very long</label
+          >
         </form>
       </div>
     </div>
