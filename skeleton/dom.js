@@ -35,12 +35,10 @@
   // This function takes a todo, it returns the DOM node representing that todo
   let createTodoNode = function(todo) {
     let todoNode = document.createElement("li");
-
     todoNode.className = "todo-items";
 
     let todoNameNode = document.createElement("h3");
     todoNameNode.className = "todo-name";
-
     let todoDescNode = document.createElement("p");
     todoDescNode.className = "todo-desc";
 
@@ -111,7 +109,7 @@
       let todoDesc = document.getElementById("inputDescription").value;;
       event.preventDefault();
       if (todoName.length > 17) {
-
+        
       } else {
         let todoObj = {};
         todoObj.name = todoName;
@@ -134,6 +132,7 @@
   // you do not need to change this function
   var renderState = function(state) {
     var todoListNode = document.createElement("ul");
+
     state.forEach(function(todo) {
       todoListNode.appendChild(createTodoNode(todo));
     });
