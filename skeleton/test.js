@@ -70,7 +70,7 @@ test("sorted by not done", function(t) {
 });
 
 test("sorted by done", function(t) {
-  let actual = logic.sortTodos(todos);
+  let actual = logic.sortTodos(todos).reverse();
   var expected = todos;
   t.deepEqual(actual, expected, "Should return recent todos");
   t.end();
@@ -158,6 +158,32 @@ test("Testing - deleting todo", function(t) {
 test("Testing markTodo return value", function(t) {
   var actual = logic.markTodo(todos, 2);
   var expected = todosMark;
+  t.deepEqual(actual, expected, "Should return todos with the done toggled");
+  t.end();
+});
+
+test("Testing edit todo", function(t) {
+  var actual = logic.editTodo(todos, 2, "changed", "changed1");
+  var expected = [
+    {
+      id: 1,
+      name: "eat lunch",
+      desc: "don't forget to eat salaaadd",
+      done: false
+    },
+    {
+      id: 2,
+      name: "changed",
+      desc: "changed1",
+      done: false
+    },
+    {
+      id: 3,
+      name: "eat lunch3",
+      desc: "don't forget to eat salaaadd3",
+      done: false
+    }
+  ];
   t.deepEqual(actual, expected, "Should return todos with the done toggled");
   t.end();
 });

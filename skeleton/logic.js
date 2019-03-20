@@ -71,6 +71,17 @@ var todoFunctions = {
       : sortFunction === "notDone"
       ? notDoneTodos
       : originalTodos;
+  },
+  editTodo: function(todos, idToEdit, newName, newDesc) {
+    let clonedTodos = this.cloneArrayOfObjects(todos);
+
+    return clonedTodos.reduce(function(todosAcc, currentTodo) {
+      if (currentTodo.id === idToEdit) {
+        currentTodo.name = newName;
+        currentTodo.desc = newDesc;
+      }
+      return todosAcc.concat(currentTodo);
+    }, []);
   }
 };
 
