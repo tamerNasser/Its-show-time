@@ -40,36 +40,44 @@ var todoFunctions = {
     // hint: array.filter
     let clonedNewTodos = this.cloneArrayOfObjects(todos);
     return clonedNewTodos.filter(object => object.id !== idToDelete);
-
   },
   markTodo: function(todos, idToMark) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
     // hint: array.map
-  return todos.reduce(function(updatedTodos,currentTodo){
-      if(currentTodo.id === idToMark){
-        if(!currentTodo.done)
-          currentTodo.done = true;
-        else
-          currentTodo.done = false;
+    return todos.reduce(function(updatedTodos, currentTodo) {
+      if (currentTodo.id === idToMark) {
+        if (!currentTodo.done) currentTodo.done = true;
+        else currentTodo.done = false;
       }
       return updatedTodos.concat(currentTodo);
-    },[])
+    }, []);
   },
   sortTodos: function(todos, sortFunction) {
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
-  },
-};
+    let originalTodos = this.cloneArrayOfObjects(todos);
+    let doneTodos = this.cloneArrayOfObjects(todos);
+    let notDoneTodos = this.cloneArrayOfObjects(todos);
 
+    doneTodos = doneTodos.filter(todo => todo.done === true);
+    notDoneTodos = notDoneTodos.filter(todo => todo.done === false);
+
+    return sortFunction === "done"
+      ? doneTodos
+      : sortFunction === "notDone"
+      ? notDoneTodos
+      : originalTodos;
+  }
+};
 
 // Why is this if statement necessary?
 // The answer has something to do with needing to run code both in the browser and in Node.js
 // See this article for more details:
 // http://www.matteoagosti.com/blog/2013/02/24/writing-javascript-modules-for-both-browser-and-node/
-if (typeof module !== 'undefined') {
+if (typeof module !== "undefined") {
   module.exports = todoFunctions;
 }
