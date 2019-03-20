@@ -190,6 +190,9 @@ body {
 .popup.remove{
   display: none;
 }
+.popup.edit{
+  display: none;
+}
 .popup > div {
   background-color: #fff;
   box-shadow: 10px 10px 60px #555;
@@ -300,6 +303,9 @@ select::-ms-expand {
 #add-todo label {
   font-size: 30px;
 }
+#edit-todo label {
+  font-size: 30px;
+}
 #remove-todo label {
   font-size: 30px;
 }
@@ -307,9 +313,24 @@ select::-ms-expand {
   font-size: 30px;
   width: 100%;
 }
+#edit-todo input[type="text"] {
+  font-size: 30px;
+  width: 100%;
+}
 
 
 #add-todo input[type="submit"] {
+  width: 40%;
+  margin: 5px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+#edit-todo input[type="submit"] {
   width: 40%;
   margin: 5px;
   background-color: #4caf50;
@@ -332,6 +353,11 @@ select::-ms-expand {
   font-size: 16px;
 }
 #add-todo label[for="submit"] {
+  display: none;
+  color: red;
+  font-size: 18px;
+}
+#edit-todo label[for="submit"] {
   display: none;
   color: red;
   font-size: 18px;
