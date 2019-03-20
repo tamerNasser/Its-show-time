@@ -16,7 +16,7 @@
     <div class="page-title"><h1>It's showtime To Do List</h1></div>
 
     <div style="display:flex; justify-content:center;">
-      <div class="custom-select" style="position:relative; width:200px;">
+      <div class="select" style="position:relative">
         <select>
           <option value="0">Sort by:</option>
           <option value="1">Recent</option>
@@ -27,17 +27,20 @@
     </div>
     <div id="todo-container">&nbsp;</div>
 
-
     <div id="popupAddTodo" class="popupAdd">
       <div class="popupAddContent">
         <div id="btnClose" class="popupCloseButton">X</div>
         <form id="add-todo">
-
           <label for="inputName">Name:</label>
           <input id="inputName" type="text" name="description" value="" />
 
           <label for="inputDescription">Description:</label>
-          <input id="inputDescription" type="text" name="description" value="" />
+          <input
+            id="inputDescription"
+            type="text"
+            name="description"
+            value=""
+          />
 
           <input type="submit" name="" value="Submit" /><br />
           <label for="submit">Name or description is very long</label>

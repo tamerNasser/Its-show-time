@@ -7,7 +7,7 @@ hr {
   opacity: 0.5;
 }
 
-input[type="checkbox"]:checked+label:before {
+input[type="checkbox"]:checked + label:before {
   background: #6666;
   opacity: 1;
   align-items: center;
@@ -21,24 +21,20 @@ input[type="checkbox"]:checked+label:before {
   align-self: center;
 }
 
-input[type="checkbox"]:checked~div {
+input[type="checkbox"]:checked ~ div {
   text-decoration: line-through green;
   text-decoration-style: wavy;
 }
 
-<<<<<<< HEAD
-input[type="checkbox"]:checked+.buttonsContainer .editBtn {
-=======
 input[type="checkbox"]:checked {
   border: 1px black solid;
 }
 
 input[type="checkbox"]:checked + .buttonsContainer .editBtn {
->>>>>>> 72b24148d649ea0c2f233dc9f9a7dd6080a8783e
   display: none;
 }
 
-input[type="checkbox"]+label:before {
+input[type="checkbox"] + label:before {
   content: "";
   opacity: 1;
   display: flex;
@@ -48,7 +44,7 @@ input[type="checkbox"]+label:before {
   background: #6666;
 }
 
-input[type="checkbox"]+label {
+input[type="checkbox"] + label {
   display: inherit;
   align-self: center;
   transition: all 1s ease;
@@ -200,7 +196,7 @@ body {
   z-index: 10000;
 }
 
-.popupAdd>div {
+.popupAdd > div {
   background-color: #fff;
   box-shadow: 10px 10px 60px #555;
   display: flex;
@@ -307,26 +303,25 @@ select::-ms-expand {
   transition: 0.25s all ease;
 }
 
-<<<<<<< HEAD
 #add-todo label {
   font-size: 30px;
 }
 
-#add-todo input[type='text'] {
+#add-todo input[type="text"] {
   font-size: 30px;
   width: 100%;
 }
 
-#add-todo input[type='submit'] {
+#add-todo input[type="submit"] {
   font-size: 20px;
   width: 40%;
   margin: 5px;
-=======
+}
+
 #floating-button {
   transition: all 90.5s ease;
 }
 
 #floating-button:hover {
   transform: rotate(99999deg);
->>>>>>> 72b24148d649ea0c2f233dc9f9a7dd6080a8783e
 }
