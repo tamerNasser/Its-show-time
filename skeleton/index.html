@@ -27,16 +27,16 @@
     </div>
     <div id="todo-container">&nbsp;</div>
 
-    <form id="add-todo">
-      <input id="inputName" type="text" name="description" value="" />
-      <input type="submit" name="" value="Submit" />
-    </form>
+
     <!-- <div class="hover_bkgr_fricc"> -->
-    <div class="popupAdd">
+    <div id="popupAddTodo" class="popupAdd">
       <!-- <span class="helper"></span> -->
       <div class="popupAddContent">
-        <div class="popupCloseButton">X</div>
-        <p>Add any HTML content<br />inside the popup box!</p>
+        <div id="btnClose" class="popupCloseButton">X</div>
+        <form id="add-todo">
+          <input id="inputName" type="text" name="description" value="" />
+          <input type="submit" name="" value="Submit" />
+        </form>
       </div>
     </div>
     <div
