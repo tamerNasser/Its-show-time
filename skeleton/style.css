@@ -26,6 +26,10 @@ input[type="checkbox"]:checked ~ div {
   text-decoration-style: wavy;
 }
 
+input[type="checkbox"]:checked {
+  border: 1px black solid;
+}
+
 input[type="checkbox"]:checked + .buttonsContainer .editBtn {
   display: none;
 }
@@ -43,6 +47,7 @@ input[type="checkbox"] + label:before {
 input[type="checkbox"] + label {
   display: inherit;
   align-self: center;
+  transition: all 1s ease;
   text-align: center;
   padding-left: 10px;
   position: absolute;
@@ -53,12 +58,15 @@ input[type="checkbox"] {
   z-index: 2;
   left: 22.5px;
   opacity: 0;
+  transition: all 1s ease;
+
   position: relative;
   width: 12vw;
   align-self: center;
 }
 
 .todo-items {
+  transition: all 1.2s ease;
   display: flex;
   justify-content: space-between;
 }
@@ -68,7 +76,22 @@ ul {
   padding: 0;
 }
 
+button:hover,
+label:hover,
+input:hover ~ label {
+  opacity: 0.7;
+  transform: scale(0.9);
+}
+
+button,
+label,
+input {
+  transition: all 0.5s ease;
+}
+
 li {
+  transition: all 1.2s ease;
+
   display: block;
   margin: 0 auto;
   width: 95vw;
@@ -294,7 +317,16 @@ select::-ms-expand {
   width: 40%;
   margin: 5px;
 }
+
 #add-todo label[for="submit"] {
   color: red;
   font-size: 18px;
+}
+
+#floating-button {
+  transition: all 90.5s ease;
+}
+
+#floating-button:hover {
+  transform: rotate(99999deg);
 }
