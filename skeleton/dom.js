@@ -75,20 +75,15 @@
 
     let deleteButton = document.createElement("button");
     deleteButton.className = "deleteBtn";
-deleteButton.value = todo.id;
+    deleteButton.value = todo.id;
     let editButton = document.createElement("button");
     editButton.className = "editBtn";
-
     checkButton.addEventListener("click", function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
 
       update(newState);
       sortTodosFunction();
     });
-
-
-
-
 
     buttonsContainer.appendChild(deleteButton);
     buttonsContainer.appendChild(editButton);
@@ -100,12 +95,10 @@ deleteButton.value = todo.id;
     return todoNode;
   };
   if (removeTodoForm) {
-
     document
       .getElementById("deletetodo")
       .addEventListener("click", function(event) {
         event.preventDefault();
-
         var newState = todoFunctions.deleteTodo(state, parseInt(this.name));
         document.getElementById("popupRemoveTodo").style.display = "none";
         update(newState);
@@ -150,6 +143,7 @@ deleteButton.value = todo.id;
 
     // you may want to add a class for css
     container.replaceChild(todoListNode, container.firstChild);
+    deleteTodoSetup();
   };
 
   if (container) renderState(state);
@@ -175,13 +169,15 @@ deleteButton.value = todo.id;
     .addEventListener("click", function() {
       document.getElementById("popupAddTodo").style.display = "flex";
     });
-    for(let i=0;i<document.getElementsByClassName("deleteBtn").length;i++){
-      document
-        .getElementsByClassName("deleteBtn")[i]
-        .addEventListener("click", function() {
-          document.getElementById("popupRemoveTodo").style.display = "flex";
-          document.getElementById("deletetodo").name = this.value;
-        });
-    }
-
+    deleteTodoSetup();
 })();
+
+function deleteTodoSetup(){
+  for (let i = 0; i < document.getElementsByClassName("deleteBtn").length; i++) {
+    document
+      .getElementsByClassName("deleteBtn")[i].addEventListener("click", function() {
+        document.getElementById("popupRemoveTodo").style.display = "flex";
+        document.getElementById("deletetodo").name = this.value;
+      });
+  }
+}
