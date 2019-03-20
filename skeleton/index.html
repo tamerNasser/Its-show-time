@@ -15,26 +15,32 @@
   <body>
     <div class="page-title"><h1>It's showtime To Do List</h1></div>
 
-    <h3 style="text-align:center;">Filter by:</h3>
-    <div class="select" style="display:flex; justify-content:center;">
-      <select>
-        <option value="0">Default</option>
-        <option value="1">Recent</option>
-        <option value="2">Done</option>
-        <option value="3">Not Done</option>
-      </select>
+    <div style="display:flex; justify-content:center;">
+      <div class="custom-select" style="position:relative; width:200px;">
+        <select>
+          <option value="0">Sort by:</option>
+          <option value="1">Recent</option>
+          <option value="2">Done</option>
+          <option value="2">Not Done</option>
+        </select>
+      </div>
     </div>
-
     <div id="todo-container">&nbsp;</div>
 
-    <!-- <div class="hover_bkgr_fricc"> -->
+
     <div id="popupAddTodo" class="popupAdd">
-      <!-- <span class="helper"></span> -->
       <div class="popupAddContent">
         <div id="btnClose" class="popupCloseButton">X</div>
         <form id="add-todo">
+
+          <label for="inputName">Name:</label>
           <input id="inputName" type="text" name="description" value="" />
-          <input type="submit" name="" value="Submit" />
+
+          <label for="inputDescription">Description:</label>
+          <input id="inputDescription" type="text" name="description" value="" />
+
+          <input type="submit" name="" value="Submit" /><br />
+          <label for="submit">Name or description is very long</label>
         </form>
       </div>
     </div>
