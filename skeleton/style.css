@@ -223,7 +223,7 @@ body {
 .popupAdd{
     background:rgba(0,0,0,.4);
     cursor:pointer;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;    height:100%;
     position:fixed;
@@ -247,8 +247,9 @@ body {
   display: flex;
 }
 .popupCloseButton {
-    background-color: #fff;
-    border: 3px solid #999;
+    background-color: red;
+    border-color:solid black;
+    color: white;
     border-radius: 50px;
     cursor: pointer;
     display: inline-block;
@@ -264,5 +265,5 @@ body {
     text-align: center;
 }
 .popupCloseButton:hover {
-    background-color: #ccc;
+    background-color: red;
 }
