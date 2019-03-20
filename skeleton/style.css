@@ -15,9 +15,9 @@ input[type="checkbox"]:checked + label:before {
   display: flex;
   border-radius: 50%;
   content: "\2714";
-  height: 10vh;
+  height: 12vh;
   font-size: 55px;
-  width: 20vw;
+  width: 12vh;
   align-self: center;
 }
 
@@ -34,8 +34,8 @@ input[type="checkbox"] + label:before {
   content: "";
   opacity: 1;
   display: flex;
-  height: 10vh;
-  width: 20vw;
+  width: 12vh;
+  height: 12vh;
   border-radius: 50%;
   background: #6666;
 }
