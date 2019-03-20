@@ -223,6 +223,12 @@
     }
   }
 
+  document.getElementById('btnClose').addEventListener("click",function(){
+      document.getElementById('popupAddTodo').style.display="none";
+})
+document.getElementById('floating-button').addEventListener("click",function(){
+    document.getElementById('popupAddTodo').style.display="flex";
+})
   /* If the user clicks anywhere outside the select box,
     then close all select boxes: */
   document.addEventListener("click", closeAllSelect);
