@@ -83,6 +83,7 @@
       var newState = todoFunctions.markTodo(state, todo.id);
 
       update(newState);
+      sortTodosFunction();
     });
 
     deleteButton.addEventListener("click", function(event) {
