@@ -153,11 +153,12 @@
     renderState(sortedState);
   }
 
-    document.getElementById('btnClose').addEventListener("click",function(){
-        document.getElementById('popupAddTodo').style.display="none";
-  })
-  document.getElementById('floating-button').addEventListener("click",function(){
-      document.getElementById('popupAddTodo').style.display="flex";
-  })
-
+  document.getElementById("btnClose").addEventListener("click", function() {
+    document.getElementById("popupAddTodo").style.display = "none";
+  });
+  document
+    .getElementById("floating-button")
+    .addEventListener("click", function() {
+      document.getElementById("popupAddTodo").style.display = "flex";
+    });
 })();
