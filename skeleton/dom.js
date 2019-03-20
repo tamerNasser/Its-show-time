@@ -6,7 +6,8 @@
   var addTodoForm = document.getElementById("add-todo");
   // This is the dom node where we will keep our todo
 
-  var state = [{
+  var state = [
+    {
       id: -3,
       name: "first1",
       desc: "first todo",
@@ -106,20 +107,18 @@
       // what does event.preventDefault do?
       // what is inside event.target?
       let todoName = document.getElementById("inputName").value;
-      let todoDesc = document.getElementById("inputDescription").value;;
+      let todoDesc = document.getElementById("inputDescription").value;
+      let addtodoError = document.getElementById("addtodoError");
       event.preventDefault();
       if (todoName.length > 17) {
-        
+        addtodoError.style.display="block";
       } else {
         let todoObj = {};
         todoObj.name = todoName;
         todoObj.desc = todoDesc;
+        var newState = todoFunctions.addTodo(state, todoObj);
+        update(newState);
       }
-      // hint: todoFunctions.addTodo
-      var newState = todoFunctions.addTodo(state, todoObj);
-
-      // ?? change this!
-      update(newState);
     });
   }
 
@@ -156,11 +155,12 @@
     renderState(sortedState);
   }
 
-  document.getElementById('btnClose').addEventListener("click", function() {
-    document.getElementById('popupAddTodo').style.display = "none";
-  })
-  document.getElementById('floating-button').addEventListener("click", function() {
-    document.getElementById('popupAddTodo').style.display = "flex";
-  })
-
+  document.getElementById("btnClose").addEventListener("click", function() {
+    document.getElementById("popupAddTodo").style.display = "none";
+  });
+  document
+    .getElementById("floating-button")
+    .addEventListener("click", function() {
+      document.getElementById("popupAddTodo").style.display = "flex";
+    });
 })();
