@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
     <div class="page-title"><h1>It's showtime To Do List</h1></div>
     <div id="todo-container">&nbsp;</div>
@@ -19,6 +20,22 @@
       <input id="inputName" type="text" name="description" value="" />
       <input type="submit" name="" value="Submit" />
     </form>
+    <!-- <div class="hover_bkgr_fricc"> -->
+    <div class="popupAdd">
+      <!-- <span class="helper"></span> -->
+      <div class="popupAddContent">
+        <div class="popupCloseButton">X</div>
+        <p>Add any HTML content<br />inside the popup box!</p>
+      </div>
+    </div>
+    <div
+      id="floating-button"
+      data-toggle="tooltip"
+      data-placement="left"
+      data-original-title="Create"
+    >
+      <img class="plusBtn" src="plusIcon.png" />
+    </div>
   </body>
   <script type="text/javascript" src="./logic.js"></script>
   <script type="text/javascript" src="./dom.js"></script>
