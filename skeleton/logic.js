@@ -65,7 +65,7 @@ var todoFunctions = {
 
     doneTodos = doneTodos.filter(todo => todo.done === true);
     notDoneTodos = notDoneTodos.filter(todo => todo.done === false);
-
+    originalTodos = originalTodos.reverse();
     return sortFunction === "done"
       ? doneTodos
       : sortFunction === "notDone"
