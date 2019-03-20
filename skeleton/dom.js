@@ -117,6 +117,7 @@
         todoObj.name = todoName;
         todoObj.desc = todoDesc;
         var newState = todoFunctions.addTodo(state, todoObj);
+        document.getElementById("popupAddTodo").style.display = "none";
         update(newState);
       }
     });
