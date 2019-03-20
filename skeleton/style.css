@@ -82,6 +82,7 @@ input {
 
 li {
   display: block;
+  transition: all 0.5s ease;
   margin: 0 auto;
   width: 95vw;
   margin-top: 10%;
@@ -321,6 +322,26 @@ select::-ms-expand {
   transition: all 90.5s ease;
 }
 
- #floating-button:hover {
+#floating-button:hover {
   transform: rotate(99999deg);
+}
+
+@media (min-width: 700px) {
+  li {
+    width: 60vw;
+    margin-top: 5%;
+  }
+  input[type="checkbox"] {
+    width: 6vw;
+  }
+}
+
+@media (min-width: 1050px) {
+  li {
+    width: 40vw;
+    margin-top: 5%;
+  }
+  input[type="checkbox"] {
+    width: 6vw;
+  }
 }

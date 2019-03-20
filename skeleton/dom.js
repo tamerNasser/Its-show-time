@@ -83,6 +83,7 @@
       var newState = todoFunctions.markTodo(state, todo.id);
 
       update(newState);
+      sortTodosFunction();
     });
 
     deleteButton.addEventListener("click", function(event) {
@@ -111,7 +112,7 @@
       let addtodoError = document.getElementById("addtodoError");
       event.preventDefault();
       if (todoName.length > 17) {
-        addtodoError.style.display="block";
+        addtodoError.style.display = "block";
       } else {
         let todoObj = {};
         todoObj.name = todoName;
