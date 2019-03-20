@@ -78,7 +78,6 @@
     deleteButton.value = todo.id;
     let editButton = document.createElement("button");
     editButton.className = "editBtn";
-
     checkButton.addEventListener("click", function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
 
@@ -144,13 +143,7 @@
 
     // you may want to add a class for css
     container.replaceChild(todoListNode, container.firstChild);
-    for (let i = 0; i < document.getElementsByClassName("deleteBtn").length; i++) {
-      document
-        .getElementsByClassName("deleteBtn")[i].addEventListener("click", function() {
-          document.getElementById("popupRemoveTodo").style.display = "flex";
-          document.getElementById("deletetodo").name = this.value;
-        });
-    }
+    deleteTodoSetup();
   };
 
   if (container) renderState(state);
@@ -176,11 +169,15 @@
     .addEventListener("click", function() {
       document.getElementById("popupAddTodo").style.display = "flex";
     });
-    for (let i = 0; i < document.getElementsByClassName("deleteBtn").length; i++) {
-      document
-        .getElementsByClassName("deleteBtn")[i].addEventListener("click", function() {
-          document.getElementById("popupRemoveTodo").style.display = "flex";
-          document.getElementById("deletetodo").name = this.value;
-        });
-    }
+    deleteTodoSetup();
 })();
+
+function deleteTodoSetup(){
+  for (let i = 0; i < document.getElementsByClassName("deleteBtn").length; i++) {
+    document
+      .getElementsByClassName("deleteBtn")[i].addEventListener("click", function() {
+        document.getElementById("popupRemoveTodo").style.display = "flex";
+        document.getElementById("deletetodo").name = this.value;
+      });
+  }
+}
