@@ -37,11 +37,8 @@
     let todoDescNode = document.createElement("p");
     todoDescNode.className = "todo-desc";
 
-    var deleteButtonNode = document.createElement("button");
-    deleteButtonNode.addEventListener("click", function(event) {
-      var newState = todoFunctions.deleteTodo(state, todo.id);
-      update(newState);
-    });
+    //var deleteButtonNode = document.createElement("button");
+
     todoNameNode.innerText = todo.name;
     todoDescNode.innerText = todo.desc;
 
@@ -61,14 +58,24 @@
     container.appendChild(document.createElement("hr"));
     container.appendChild(todoDescNode);
     //  container.appendChild(deleteButtonNode);
+
+    let buttonsContainer = document.createElement("div");
+    todoNode.appendChild(buttonsContainer);
+    buttonsContainer.className = "buttonsContainer";
+
     let deleteButton = document.createElement("button");
     deleteButton.className = "deleteBtn";
 
     let editButton = document.createElement("button");
     editButton.className = "editBtn";
 
-    todoNode.appendChild(deleteButton);
-    todoNode.appendChild(editButton);
+    deleteButton.addEventListener("click", function(event) {
+      var newState = todoFunctions.deleteTodo(state, todo.id);
+      update(newState);
+    });
+
+    buttonsContainer.appendChild(deleteButton);
+    buttonsContainer.appendChild(editButton);
 
     // add markTodo button
 
