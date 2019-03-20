@@ -4,10 +4,10 @@
 (function() {
   var container = document.getElementById("todo-container");
   var addTodoForm = document.getElementById("add-todo");
+  var removeTodoForm = document.getElementById("remove-todo");
   // This is the dom node where we will keep our todo
 
-  var state = [
-    {
+  var state = [{
       id: -3,
       name: "first1",
       desc: "first todo",
@@ -75,7 +75,7 @@
 
     let deleteButton = document.createElement("button");
     deleteButton.className = "deleteBtn";
-
+deleteButton.value = todo.id;
     let editButton = document.createElement("button");
     editButton.className = "editBtn";
 
@@ -86,10 +86,9 @@
       sortTodosFunction();
     });
 
-    deleteButton.addEventListener("click", function(event) {
-      var newState = todoFunctions.deleteTodo(state, todo.id);
-      update(newState);
-    });
+
+
+
 
     buttonsContainer.appendChild(deleteButton);
     buttonsContainer.appendChild(editButton);
@@ -100,7 +99,18 @@
 
     return todoNode;
   };
+  if (removeTodoForm) {
 
+    document
+      .getElementById("deletetodo")
+      .addEventListener("click", function(event) {
+        event.preventDefault();
+
+        var newState = todoFunctions.deleteTodo(state, parseInt(this.name));
+        document.getElementById("popupRemoveTodo").style.display = "none";
+        update(newState);
+      });
+  }
   // bind create todo form
   if (addTodoForm) {
     addTodoForm.addEventListener("submit", function(event) {
@@ -165,4 +175,13 @@
     .addEventListener("click", function() {
       document.getElementById("popupAddTodo").style.display = "flex";
     });
+    for(let i=0;i<document.getElementsByClassName("deleteBtn").length;i++){
+      document
+        .getElementsByClassName("deleteBtn")[i]
+        .addEventListener("click", function() {
+          document.getElementById("popupRemoveTodo").style.display = "flex";
+          document.getElementById("deletetodo").name = this.value;
+        });
+    }
+
 })();

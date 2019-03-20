@@ -14,11 +14,11 @@
 
   <body>
     <div class="page-title"><h1>It's showtime To Do List</h1></div>
-
+    <h3 style="text-align:center;">Filter by:</h3>
     <div style="display:flex; justify-content:center;">
       <div class="select" style="position:relative;">
         <select>
-          <option value="0">Sort by:</option>
+          <option value="0">Default</option>
           <option value="1">Recent</option>
           <option value="2">Done</option>
           <option value="3">Not Done</option>
@@ -27,8 +27,15 @@
     </div>
     <div id="todo-container">&nbsp;</div>
 
+<<<<<<< HEAD
+
+
+    <div id="popupAddTodo" class="popup add">
+      <div class="popupContent">
+=======
     <div id="popupAddTodo" class="popupAdd">
       <div class="popupAddContent">
+>>>>>>> 9734891438e8ed0521ccfb5e1ad578b79c21b938
         <div id="btnClose" class="popupCloseButton">X</div>
         <form id="add-todo">
           <label for="inputName">Name:</label>
@@ -46,6 +53,15 @@
           <label id="addtodoError" for="submit"
             >Name or description is very long</label
           >
+        </form>
+      </div>
+    </div>
+
+    <div id="popupRemoveTodo" class="popup remove">
+      <div class="popupContent">
+        <form id="remove-todo">
+          <label for="deletetodo">Your deleted items can't be backed-up</label>
+          <input id="deletetodo" type="submit" name="submit" value="Remove" />
         </form>
       </div>
     </div>
