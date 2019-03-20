@@ -6,8 +6,7 @@
   var addTodoForm = document.getElementById("add-todo");
   // This is the dom node where we will keep our todo
 
-  var state = [
-    {
+  var state = [{
       id: -3,
       name: "first1",
       desc: "first todo",
@@ -83,7 +82,6 @@
       var newState = todoFunctions.markTodo(state, todo.id);
 
       update(newState);
-      sortTodosFunction();
     });
 
     deleteButton.addEventListener("click", function(event) {
@@ -107,12 +105,16 @@
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
       // what does event.preventDefault do?
       // what is inside event.target?
-
+      let todoName = document.getElementById("inputName").value;
+      let todoDesc = document.getElementById("inputDescription").value;;
       event.preventDefault();
-      var description = "?"; // event.target ....
-      let todoObj = {};
-      todoObj.name = document.getElementById("inputName").value;
-      todoObj.desc = "testDesc";
+      if (todoName.length > 17) {
+
+      } else {
+        let todoObj = {};
+        todoObj.name = todoName;
+        todoObj.desc = todoDesc;
+      }
       // hint: todoFunctions.addTodo
       var newState = todoFunctions.addTodo(state, todoObj);
 
@@ -154,12 +156,11 @@
     renderState(sortedState);
   }
 
-  document.getElementById("btnClose").addEventListener("click", function() {
-    document.getElementById("popupAddTodo").style.display = "none";
-  });
-  document
-    .getElementById("floating-button")
-    .addEventListener("click", function() {
-      document.getElementById("popupAddTodo").style.display = "flex";
-    });
+  document.getElementById('btnClose').addEventListener("click", function() {
+    document.getElementById('popupAddTodo').style.display = "none";
+  })
+  document.getElementById('floating-button').addEventListener("click", function() {
+    document.getElementById('popupAddTodo').style.display = "flex";
+  })
+
 })();
