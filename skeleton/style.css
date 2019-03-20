@@ -295,6 +295,6 @@ select::-ms-expand {
   margin: 5px;
 }
 #add-todo label[for="submit"] {
-  color:red;
+  color: red;
   font-size: 18px;
 }
