@@ -18,6 +18,8 @@ var todoFunctions = {
   //cloneArrayOfObjects will create a copy of the todos array
   //changes to the new array don't affect the original
   cloneArrayOfObjects: function(todos) {
+    let newObj = [{}];
+    if (todos == null) return newObj;
     return todos.map(function(todo) {
       return JSON.parse(JSON.stringify(todo));
     });
@@ -32,14 +34,22 @@ var todoFunctions = {
     clonedNewTodo.id = this.generateId();
     clonedNewTodo.done = false;
     let clonedTodos = this.cloneArrayOfObjects(todos);
+    window.localStorage.setItem(
+      "userTodoList",
+      JSON.stringify(clonedTodos.concat(clonedNewTodo))
+    );
     return clonedTodos.concat(clonedNewTodo);
   },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
-    let clonedNewTodos = this.cloneArrayOfObjects(todos);
-    return clonedNewTodos.filter(object => object.id !== idToDelete);
+    window.localStorage.setItem(
+      "userTodoList",
+      JSON.stringify(todos.filter(object => object.id !== idToDelete))
+    );
+
+    return todos.filter(object => object.id !== idToDelete);
   },
   markTodo: function(todos, idToMark) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
@@ -51,21 +61,22 @@ var todoFunctions = {
         if (!currentTodo.done) currentTodo.done = true;
         else currentTodo.done = false;
       }
+      window.localStorage.setItem(
+        "userTodoList",
+        JSON.stringify(updatedTodos.concat(currentTodo))
+      );
       return updatedTodos.concat(currentTodo);
     }, []);
   },
-  sortTodos: function(todos, sortFunction) {
+  sortTodos: function(todos, filterString) {
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
-    let originalTodos = this.cloneArrayOfObjects(todos);
-    let doneTodos = this.cloneArrayOfObjects(todos);
-    let notDoneTodos = this.cloneArrayOfObjects(todos);
 
-    doneTodos = doneTodos.filter(todo => todo.done === true);
-    notDoneTodos = notDoneTodos.filter(todo => todo.done === false);
-    originalTodos = originalTodos.reverse();
+    doneTodos = todos.filter(todo => todo.done === true);
+    notDoneTodos = todos.filter(todo => todo.done === false);
+    originalTodos = todos.reverse();
     return sortFunction === "done"
       ? doneTodos
       : sortFunction === "notDone"
@@ -74,19 +85,20 @@ var todoFunctions = {
   },
   editTodo: function(todos, idToEdit, newName, newDesc) {
     let clonedTodos = this.cloneArrayOfObjects(todos);
-    console.log("before edit :"+clonedTodos);
     return clonedTodos.reduce(function(todosAcc, currentTodo) {
       if (currentTodo.id == idToEdit) {
         currentTodo.name = newName;
         currentTodo.desc = newDesc;
-        console.log("current todo : "+currentTodo);
       }
+      window.localStorage.setItem(
+        "userTodoList",
+        JSON.stringify(todosAcc.concat(currentTodo))
+      );
       return todosAcc.concat(currentTodo);
     }, []);
   },
   todoObj: function(todos, id) {
-    let clonedtodo = this.cloneArrayOfObjects(todos);
-    return clonedtodo.filter(object => object.id === id);
+    return todos.filter(object => object.id === id);
   }
 };
 

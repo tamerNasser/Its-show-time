@@ -31,9 +31,11 @@ input[type="checkbox"]:checked + .buttonsContainer .editBtn {
 }
 
 input[type="checkbox"] + label:before {
-  content: "";
+  content: "Done?";
   opacity: 1;
   display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
   width: 12vh;
   height: 12vh;
   border-radius: 50%;
@@ -56,6 +58,7 @@ input[type="checkbox"] {
   position: relative;
   width: 12vw;
   align-self: center;
+    cursor: pointer;
 }
 
 .todo-items {
@@ -105,6 +108,7 @@ li {
   border: 0;
   height: 50px;
   margin-top: 25%;
+    cursor: pointer;
 }
 
 li h3 {
@@ -125,6 +129,7 @@ li h3 {
   width: 50px;
   border: 0;
   height: 50px;
+    cursor: pointer;
 }
 
 li p {
