@@ -16,6 +16,7 @@ We have added animations, and icons to make the website beautiful and more frien
 Todo lists are made to make it easier for person to remember what he needs to do, and accomplish them accordingly.
 Also, they can have description which can provide to the user notes he can add
 
+[Link to the project](https://facn5.github.io/Its-show-time/skeleton/index.html)
 
 
 
