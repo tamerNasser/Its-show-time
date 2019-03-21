@@ -115,7 +115,7 @@ var btnsaveedit = document.getElementById("edittodo");
       let inputEditname = document.getElementById("inputNameEdit").value;
       let inputEditDesc = document.getElementById("inputDescEdit").value;
 
-      if (inputEditname.length > 17 || inputEditDesc.length>22) {
+      if (inputEditname.length > 17 || inputEditDesc.length>22 || todoName ===null || todoDesc ===null) {
         edittodoError.style.display = "block";
       } else {
         var newState = todoFunctions.editTodo(
@@ -142,7 +142,7 @@ var btnsaveedit = document.getElementById("edittodo");
       let todoDesc = document.getElementById("inputDescription").value;
       let addtodoError = document.getElementById("addtodoError");
       event.preventDefault();
-      if (todoName.length > 17 || todoDesc.length>22) {
+      if (todoName.length > 17 || todoDesc.length>22 || todoName===null || todoDesc ===null) {
         addtodoError.style.display = "block";
       } else {
         let todoObj = {};
