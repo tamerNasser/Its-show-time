@@ -32,10 +32,10 @@
       <div id="btnClose" class="popupCloseButton">X</div>
       <form id="add-todo" autocomplete="off">
         <label for="inputName">Name:</label>
-        <input id="inputName" type="text" name="description" value="" />
+        <input id="inputName" type="text" name="description" value="" required />
 
         <label for="inputDescription">Description:</label>
-        <input id="inputDescription" type="text" name="description" value="" />
+        <input id="inputDescription" type="text" name="description" value="" required/>
 
         <input type="submit" name="" value="Submit" /><br />
         <label id="addtodoError" for="submit">Name or description is very long</label>
@@ -47,10 +47,10 @@
       <div id="btnCloseEdit" class="popupCloseButton">X</div>
       <form id="edit-todo" autocomplete="off">
         <label for="inputNameEdit">Name:</label>
-        <input id="inputNameEdit" type="text" value="" />
+        <input id="inputNameEdit" type="text" value="" required />
 
         <label for="inputDescEdit">Description:</label>
-        <input id="inputDescEdit" type="text" value="" />
+        <input id="inputDescEdit" type="text" value="" required/>
 
         <input id="edittodo" type="submit" name="" value="Save" /><br />
         <label id="edittodoError" for="edittodo">Name or description is very long</label>
@@ -63,7 +63,7 @@
       <div id="btnCloseDelete" class="popupCloseButton">X</div>
       <form id="remove-todo" autocomplete="off">
         <label for="deletetodo">Your deleted items can't be recovered</label>
-        <input id="deletetodo" type="submit" name="" value="Remove" />
+        <input id="deletetodo" type="submit" name="" value="Remove"/>
       </form>
     </div>
   </div>
