@@ -77,9 +77,9 @@ var todoFunctions = {
     doneTodos = todos.filter(todo => todo.done === true);
     notDoneTodos = todos.filter(todo => todo.done === false);
     originalTodos = todos.reverse();
-    return sortFunction === "done"
+    return filterString === "done"
       ? doneTodos
-      : sortFunction === "notDone"
+      : filterString === "notDone"
       ? notDoneTodos
       : originalTodos;
   },
