@@ -1,7 +1,7 @@
 # Its-show-time
 
 
-#What
+# What
 
 It's show time to list is a unique to do list for users, it has multiply features we added to make it look modern as much as possible.
 
@@ -11,7 +11,7 @@ They can also filter their to do items based on Recent Added, Done Todos, and No
 
 We have added animations, and icons to make the website beautiful and more friendly to use.
 
-#Why
+# Why
 
 Todo lists are made to make it easier for person to remember what he needs to do, and accomplish them accordingly.
 Also, they can have description which can provide to the user notes he can add
