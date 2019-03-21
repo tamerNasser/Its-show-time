@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/facn5/Its-show-time#readme",
   "dependencies": {
-    "tape": "^4.10.1"
+    "tape": "^4.10.1",
+    "tap-spec": "^6.9.0"
   }
 }
