@@ -74,7 +74,7 @@ var todoFunctions = {
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
 
-    let originalTodos = cloneArrayOfObjects(todos);
+    let originalTodos = this.cloneArrayOfObjects(todos);
 
     let doneTodos = todos.filter(todo => todo.done === true);
     let notDoneTodos = todos.filter(todo => todo.done === false);
