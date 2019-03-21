@@ -44,13 +44,12 @@ var todoFunctions = {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
-    let clonedNewTodos = this.cloneArrayOfObjects(todos);
     window.localStorage.setItem(
       "userTodoList",
-      JSON.stringify(clonedNewTodos.filter(object => object.id !== idToDelete))
+      JSON.stringify(todos.filter(object => object.id !== idToDelete))
     );
 
-    return clonedNewTodos.filter(object => object.id !== idToDelete);
+    return todos.filter(object => object.id !== idToDelete);
   },
   markTodo: function(todos, idToMark) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
@@ -69,18 +68,15 @@ var todoFunctions = {
       return updatedTodos.concat(currentTodo);
     }, []);
   },
-  sortTodos: function(todos, sortFunction) {
+  sortTodos: function(todos, filterString) {
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
-    let originalTodos = this.cloneArrayOfObjects(todos);
-    let doneTodos = this.cloneArrayOfObjects(todos);
-    let notDoneTodos = this.cloneArrayOfObjects(todos);
 
-    doneTodos = doneTodos.filter(todo => todo.done === true);
-    notDoneTodos = notDoneTodos.filter(todo => todo.done === false);
-    originalTodos = originalTodos.reverse();
+    doneTodos = todos.filter(todo => todo.done === true);
+    notDoneTodos = todos.filter(todo => todo.done === false);
+    originalTodos = todos.reverse();
     return sortFunction === "done"
       ? doneTodos
       : sortFunction === "notDone"
@@ -102,8 +98,7 @@ var todoFunctions = {
     }, []);
   },
   todoObj: function(todos, id) {
-    let clonedtodo = this.cloneArrayOfObjects(todos);
-    return clonedtodo.filter(object => object.id === id);
+    return todos.filter(object => object.id === id);
   }
 };
 
