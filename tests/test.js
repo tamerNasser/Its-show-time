@@ -1,5 +1,5 @@
 var test = require("tape");
-var logic = require("./logic");
+var logic = require("../Scripts/logic");
 let todos = [
   {
     id: 1,
