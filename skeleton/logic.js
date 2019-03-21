@@ -18,6 +18,8 @@ var todoFunctions = {
   //cloneArrayOfObjects will create a copy of the todos array
   //changes to the new array don't affect the original
   cloneArrayOfObjects: function(todos) {
+    let newObj = [{}];
+    if (todos == null) return newObj;
     return todos.map(function(todo) {
       return JSON.parse(JSON.stringify(todo));
     });
@@ -32,6 +34,10 @@ var todoFunctions = {
     clonedNewTodo.id = this.generateId();
     clonedNewTodo.done = false;
     let clonedTodos = this.cloneArrayOfObjects(todos);
+    window.localStorage.setItem(
+      "userTodoList",
+      JSON.stringify(clonedTodos.concat(clonedNewTodo))
+    );
     return clonedTodos.concat(clonedNewTodo);
   },
   deleteTodo: function(todos, idToDelete) {
@@ -39,6 +45,11 @@ var todoFunctions = {
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
     let clonedNewTodos = this.cloneArrayOfObjects(todos);
+    window.localStorage.setItem(
+      "userTodoList",
+      JSON.stringify(clonedNewTodos.filter(object => object.id !== idToDelete))
+    );
+
     return clonedNewTodos.filter(object => object.id !== idToDelete);
   },
   markTodo: function(todos, idToMark) {
@@ -51,6 +62,10 @@ var todoFunctions = {
         if (!currentTodo.done) currentTodo.done = true;
         else currentTodo.done = false;
       }
+      window.localStorage.setItem(
+        "userTodoList",
+        JSON.stringify(updatedTodos.concat(currentTodo))
+      );
       return updatedTodos.concat(currentTodo);
     }, []);
   },
@@ -74,13 +89,15 @@ var todoFunctions = {
   },
   editTodo: function(todos, idToEdit, newName, newDesc) {
     let clonedTodos = this.cloneArrayOfObjects(todos);
-    console.log("before edit :"+clonedTodos);
     return clonedTodos.reduce(function(todosAcc, currentTodo) {
       if (currentTodo.id == idToEdit) {
         currentTodo.name = newName;
         currentTodo.desc = newDesc;
-        console.log("current todo : "+currentTodo);
       }
+      window.localStorage.setItem(
+        "userTodoList",
+        JSON.stringify(todosAcc.concat(currentTodo))
+      );
       return todosAcc.concat(currentTodo);
     }, []);
   },
