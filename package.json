@@ -1,0 +1,22 @@
+{
+  "name": "its-show-time",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node skeleton/test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facn5/Its-show-time.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facn5/Its-show-time/issues"
+  },
+  "homepage": "https://github.com/facn5/Its-show-time#readme",
+  "dependencies": {
+    "tape": "^4.10.1"
+  }
+}
