@@ -119,9 +119,7 @@
 
       if (
         inputEditname.length > 17 ||
-        inputEditDesc.length > 22 ||
-        todoName === null ||
-        todoDesc === null
+        inputEditDesc.length > 22 
       ) {
         edittodoError.style.display = "block";
       } else {
@@ -149,12 +147,7 @@
       let todoDesc = document.getElementById("inputDescription").value;
       let addtodoError = document.getElementById("addtodoError");
       event.preventDefault();
-      if (
-        todoName.length > 17 ||
-        todoDesc.length > 22 ||
-        todoName === null ||
-        todoDesc === null
-      ) {
+      if (todoName.length > 17 || todoDesc.length>22  ) {
         addtodoError.style.display = "block";
       } else {
         let todoObj = {};
