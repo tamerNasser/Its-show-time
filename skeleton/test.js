@@ -187,3 +187,14 @@ test("Testing edit todo", function(t) {
   t.deepEqual(actual, expected, "Should return todos with the done toggled");
   t.end();
 });
+
+test("Testin get todo object", function(t) {
+  var actual = logic.todoObj(todos , 2);
+  var expected =[{
+    id: 2,
+    name: "eat lunch2",
+    desc: "don't forget to eat salaaadd2",
+    done: false}];
+  t.deepEqual(actual, expected, "Should return todo object with id 2");
+  t.end();
+});
