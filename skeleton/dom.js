@@ -5,9 +5,11 @@
   var container = document.getElementById("todo-container");
   var addTodoForm = document.getElementById("add-todo");
   var removeTodoForm = document.getElementById("remove-todo");
+  var editTodoForm = document.getElementById("edit-todo");
   // This is the dom node where we will keep our todo
 
-  var state = [{
+  var state = [
+    {
       id: -3,
       name: "first1",
       desc: "first todo",
@@ -78,6 +80,7 @@
     deleteButton.value = todo.id;
     let editButton = document.createElement("button");
     editButton.className = "editBtn";
+    editButton.value = todo.id;
     checkButton.addEventListener("click", function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
 
@@ -104,6 +107,31 @@
         update(newState);
       });
   }
+  if (editTodoForm) {
+
+var btnsaveedit = document.getElementById("edittodo");
+    btnsaveedit.addEventListener("click", function(event) {
+      event.preventDefault();
+      let inputEditname = document.getElementById("inputNameEdit").value;
+      let inputEditDesc = document.getElementById("inputDescEdit").value;
+
+      if (inputEditname.length > 17 || inputEditDesc.length>22) {
+        edittodoError.style.display = "block";
+      } else {
+        var newState = todoFunctions.editTodo(
+          state,
+          btnsaveedit.name,
+          inputEditname,
+          inputEditDesc
+        );
+        console.log(inputEditDesc);
+        console.log(inputEditname);
+        console.log(newState);
+        document.getElementById("popupEditTodo").style.display = "none";
+        update(newState);
+      }
+    });
+  }
   // bind create todo form
   if (addTodoForm) {
     addTodoForm.addEventListener("submit", function(event) {
@@ -114,7 +142,7 @@
       let todoDesc = document.getElementById("inputDescription").value;
       let addtodoError = document.getElementById("addtodoError");
       event.preventDefault();
-      if (todoName.length > 17) {
+      if (todoName.length > 17 || todoDesc.length>22) {
         addtodoError.style.display = "block";
       } else {
         let todoObj = {};
@@ -131,6 +159,11 @@
   var update = function(newState) {
     state = newState;
     renderState(state);
+    document.getElementById("inputDescEdit").value="";
+    document.getElementById("inputNameEdit").value="";
+    document.getElementById("inputName").value="";
+    document.getElementById("inputDescription").value="";
+
   };
 
   // you do not need to change this function
@@ -144,6 +177,7 @@
     // you may want to add a class for css
     container.replaceChild(todoListNode, container.firstChild);
     deleteTodoSetup();
+    editTodoSetup(state);
   };
 
   if (container) renderState(state);
@@ -164,20 +198,42 @@
   document.getElementById("btnClose").addEventListener("click", function() {
     document.getElementById("popupAddTodo").style.display = "none";
   });
+  document.getElementById("btnCloseEdit").addEventListener("click", function() {
+
+    document.getElementById("popupEditTodo").style.display = "none";
+  });
   document
     .getElementById("floating-button")
     .addEventListener("click", function() {
       document.getElementById("popupAddTodo").style.display = "flex";
     });
-    deleteTodoSetup();
+  deleteTodoSetup();
+  editTodoSetup(state);
 })();
 
-function deleteTodoSetup(){
-  for (let i = 0; i < document.getElementsByClassName("deleteBtn").length; i++) {
+function deleteTodoSetup() {
+  for (
+    let i = 0;
+    i < document.getElementsByClassName("deleteBtn").length;
+    i++
+  ) {
     document
-      .getElementsByClassName("deleteBtn")[i].addEventListener("click", function() {
+      .getElementsByClassName("deleteBtn")
+      [i].addEventListener("click", function() {
         document.getElementById("popupRemoveTodo").style.display = "flex";
         document.getElementById("deletetodo").name = this.value;
+      });
+  }
+}
+function editTodoSetup(state) {
+  for (let i = 0; i < document.getElementsByClassName("editBtn").length; i++) {
+    document
+      .getElementsByClassName("editBtn")
+      [i].addEventListener("click", function() {
+        let btnsaveedit = document.getElementById("edittodo");
+        btnsaveedit.name = this.value;
+        document.getElementById("popupEditTodo").style.display = "flex";
+
       });
   }
 }

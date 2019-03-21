@@ -74,14 +74,19 @@ var todoFunctions = {
   },
   editTodo: function(todos, idToEdit, newName, newDesc) {
     let clonedTodos = this.cloneArrayOfObjects(todos);
-
+    console.log("before edit :"+clonedTodos);
     return clonedTodos.reduce(function(todosAcc, currentTodo) {
-      if (currentTodo.id === idToEdit) {
+      if (currentTodo.id == idToEdit) {
         currentTodo.name = newName;
         currentTodo.desc = newDesc;
+        console.log("current todo : "+currentTodo);
       }
       return todosAcc.concat(currentTodo);
     }, []);
+  },
+  todoObj: function(todos, id) {
+    let clonedtodo = this.cloneArrayOfObjects(todos);
+    return clonedtodo.filter(object => object.id === id);
   }
 };
 

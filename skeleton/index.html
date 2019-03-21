@@ -1,77 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>tdd todo</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="./style.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>tdd todo</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <body>
-    <div class="page-title"><h1>It's showtime To Do List</h1></div>
-    <h3 style="text-align:center;">Filter by:</h3>
-    <div style="display:flex; justify-content:center;">
-      <div class="select" style="position:relative;">
-        <select>
-          <option value="0">Default</option>
-          <option value="1">Recent</option>
-          <option value="2">Done</option>
-          <option value="3">Not Done</option>
-        </select>
-      </div>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="page-title">
+    <h1>It's showtime To Do List</h1>
+  </div>
+  <h3 style="text-align:center;">Filter by:</h3>
+  <div style="display:flex; justify-content:center;">
+    <div class="select" style="position:relative;">
+      <select>
+        <option value="0">Default</option>
+        <option value="1">Recent</option>
+        <option value="2">Done</option>
+        <option value="3">Not Done</option>
+      </select>
     </div>
-    <div id="todo-container">&nbsp;</div>
+  </div>
+  <div id="todo-container">&nbsp;</div>
 
+  <div id="popupAddTodo" class="popup add">
+    <div class="popupAddContent">
+      <div id="btnClose" class="popupCloseButton">X</div>
+      <form id="add-todo" autocomplete="off">
+        <label for="inputName">Name:</label>
+        <input id="inputName" type="text" name="description" value="" />
 
+        <label for="inputDescription">Description:</label>
+        <input id="inputDescription" type="text" name="description" value="" />
 
-
-
-    <div id="popupAddTodo" class="popup add">
-      <div class="popupAddContent">
-
-        <div id="btnClose" class="popupCloseButton">X</div>
-        <form id="add-todo">
-          <label for="inputName">Name:</label>
-          <input id="inputName" type="text" name="description" value="" />
-
-          <label for="inputDescription">Description:</label>
-          <input
-            id="inputDescription"
-            type="text"
-            name="description"
-            value=""
-          />
-
-          <input type="submit" name="" value="Submit" /><br />
-          <label id="addtodoError" for="submit"
-            >Name or description is very long</label
-          >
-        </form>
-      </div>
+        <input type="submit" name="" value="Submit" /><br />
+        <label id="addtodoError" for="submit">Name or description is very long</label>
+      </form>
     </div>
+  </div>
+  <div id="popupEditTodo" class="popup edit">
+    <div class="popupContent">
+      <div id="btnCloseEdit" class="popupCloseButton">X</div>
+      <form id="edit-todo" autocomplete="off">
+        <label for="inputNameEdit">Name:</label>
+        <input id="inputNameEdit" type="text" value="" />
 
-    <div id="popupRemoveTodo" class="popup remove">
-      <div class="popupContent">
-        <form id="remove-todo">
-          <label for="deletetodo">Your deleted items can't be backed-up</label>
-          <input id="deletetodo" type="submit" name="" value="Remove" />
-        </form>
-      </div>
+        <label for="inputDescEdit">Description:</label>
+        <input id="inputDescEdit" type="text" value="" />
+
+        <input id="edittodo" type="submit" name="" value="Save" /><br />
+        <label id="edittodoError" for="edittodo">Name or description is very long</label>
+      </form>
     </div>
-    <div
-      id="floating-button"
-      data-toggle="tooltip"
-      data-placement="left"
-      data-original-title="Create"
-    >
-      <img class="plusBtn" src="plusIcon.png" />
+  </div>
+
+  <div id="popupRemoveTodo" class="popup remove">
+    <div class="popupContent">
+      <form id="remove-todo" autocomplete="off">
+        <label for="deletetodo">Your deleted items can't be backed-up</label>
+        <input id="deletetodo" type="submit" name="" value="Remove" />
+      </form>
     </div>
-  </body>
-  <script type="text/javascript" src="./logic.js"></script>
-  <script type="text/javascript" src="./dom.js"></script>
+  </div>
+  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create">
+    <img class="plusBtn" src="plusIcon.png" />
+  </div>
+</body>
+<script type="text/javascript" src="./logic.js"></script>
+<script type="text/javascript" src="./dom.js"></script>
+
 </html>
