@@ -207,6 +207,9 @@ var btnsaveedit = document.getElementById("edittodo");
     .addEventListener("click", function() {
       document.getElementById("popupAddTodo").style.display = "flex";
     });
+    document.getElementById("btnCloseDelete").addEventListener("click", function() {
+      document.getElementById("popupRemoveTodo").style.display = "none";
+    });
   deleteTodoSetup();
   editTodoSetup(state);
 })();
