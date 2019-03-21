@@ -15,20 +15,20 @@
     state = [
       {
         id: -3,
-        name: "first1",
-        desc: "first todo",
+        name: "First todo title",
+        desc: "First todo description",
         done: false
       },
       {
         id: -2,
-        name: "second2",
-        desc: "second todo",
+        name: "Second todo title",
+        desc: "Second todo description",
         done: false
       },
       {
         id: -1,
-        name: "third3",
-        desc: "third todo",
+        name: "Third todo title",
+        desc: "Third todo description",
         done: false
       }
     ];
