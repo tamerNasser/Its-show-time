@@ -1,0 +1,392 @@
+html {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+hr {
+  margin-top: 0.5rem;
+  opacity: 0.5;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background: #6666;
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 50%;
+  content: "\2714";
+  height: 12vh;
+  font-size: 55px;
+  width: 12vh;
+  align-self: center;
+}
+
+input[type="checkbox"]:checked ~ div {
+  text-decoration: line-through green;
+  text-decoration-style: wavy;
+}
+
+input[type="checkbox"]:checked + .buttonsContainer .editBtn {
+  display: none;
+}
+
+input[type="checkbox"] + label:before {
+  content: "";
+  opacity: 1;
+  display: flex;
+  width: 12vh;
+  height: 12vh;
+  border-radius: 50%;
+  background: #6666;
+}
+
+input[type="checkbox"] + label {
+  display: inherit;
+  align-self: center;
+  text-align: center;
+  padding-left: 10px;
+  position: absolute;
+}
+
+input[type="checkbox"] {
+  height: 8vh;
+  z-index: 2;
+  left: 22.5px;
+  opacity: 0;
+  position: relative;
+  width: 12vw;
+  align-self: center;
+}
+
+.todo-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+button:hover,
+label:hover,
+input:hover ~ label {
+  opacity: 0.7;
+  transform: scale(0.9);
+}
+
+button,
+label,
+input {
+  transition: all 0.5s ease;
+}
+
+li {
+  display: block;
+  transition: all 0.5s ease;
+  margin: 0 auto;
+  width: 95vw;
+  margin-top: 10%;
+  border: 1px black solid;
+  border-radius: 10px;
+}
+
+.buttonsContainer {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.editBtn {
+  background: url(./download.png);
+  background-size: cover;
+  border-radius: 50%;
+  width: 50px;
+  -webkit-transform: scale(1.2);
+  border: 0;
+  height: 50px;
+  margin-top: 25%;
+}
+
+li h3 {
+  margin: 0;
+  text-align: center;
+  max-width: 25ch;
+  word-break: break-all;
+  color: #141414;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 1.8rem;
+}
+
+.deleteBtn {
+  background: url(./delete.png);
+  background-size: cover;
+  border-radius: 50%;
+  width: 50px;
+  border: 0;
+  height: 50px;
+}
+
+li p {
+  margin: 1rem;
+  font-size: 1.35rem;
+  color: #666;
+  text-align: justify;
+  max-width: 25ch;
+  word-break: break-all;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.page-title {
+  margin-top: 3%;
+  color: #141414;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.contentContainer {
+  padding: 45px;
+}
+
+#todo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+#floating-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+}
+
+.plusBtn {
+  width: 60px;
+  height: 60px;
+}
+
+
+.popup{
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+}
+.popup.add{
+  display: none;
+}
+.popup.remove{
+  display: none;
+}
+.popup.edit{
+  display: none;
+}
+.popup > div {
+  background-color: #fff;
+  box-shadow: 10px 10px 60px #555;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  width: 60%;
+  position: fixed;
+  border-radius: 8px;
+  padding: 15px 5%;
+}
+
+.popupContent {
+  display: flex;
+}
+
+.popupCloseButton {
+  background-color: red;
+  border-color: solid black;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: arial;
+  font-weight: bold;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 25px;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.popupCloseButton:hover {
+  background-color: red;
+}
+
+.center-on-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #141414;
+  background-image: none;
+}
+
+/* Custom Select */
+.select {
+  position: relative;
+  width: 19em;
+  height: 3em;
+  line-height: 3;
+  margin: 0 auto;
+  background: #141414;
+  overflow: hidden;
+  border-radius: 0.25em;
+}
+
+select {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  background: #666;
+  pointer-events: none;
+}
+
+/* Transition */
+.select:hover::after {
+  color: #dcdcdc;
+}
+
+.select::after {
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
+
+#add-todo label {
+  font-size: 30px;
+}
+#edit-todo label {
+  font-size: 30px;
+}
+#remove-todo label {
+  font-size: 30px;
+}
+#add-todo input[type="text"] {
+  font-size: 30px;
+  width: 100%;
+}
+#edit-todo input[type="text"] {
+  font-size: 30px;
+  width: 100%;
+}
+
+
+#add-todo input[type="submit"] {
+  width: 40%;
+  margin: 5px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+#edit-todo input[type="submit"] {
+  width: 40%;
+  margin: 5px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+#remove-todo input[type="submit"] {
+  width: 40%;
+  margin: 5px;
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+#add-todo label[for="submit"],
+#edit-todo label[for="edittodo"] {
+  display: none;
+  color: red;
+  font-size: 18px;
+}
+#edit-todo label[for="submit"] {
+  display: none;
+  color: red;
+  font-size: 18px;
+}
+#floating-button {
+  transition: all 90.5s ease;
+}
+
+#floating-button:hover {
+  transform: rotate(99999deg);
+}
+
+@media (min-width: 700px) {
+  li {
+    width: 60vw;
+    margin-top: 5%;
+  }
+  input[type="checkbox"] {
+    width: 6vw;
+  }
+}
+
+@media (min-width: 1050px) {
+  li {
+    width: 40vw;
+    margin-top: 5%;
+  }
+  input[type="checkbox"] {
+    width: 6vw;
+  }
+}
