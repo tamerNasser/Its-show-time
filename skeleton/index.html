@@ -30,7 +30,7 @@
   <div id="popupAddTodo" class="popup add">
     <div class="popupAddContent">
       <div id="btnClose" class="popupCloseButton">X</div>
-      <form id="add-todo">
+      <form id="add-todo" autocomplete="off">
         <label for="inputName">Name:</label>
         <input id="inputName" type="text" name="description" value="" />
 
@@ -45,7 +45,7 @@
   <div id="popupEditTodo" class="popup edit">
     <div class="popupContent">
       <div id="btnCloseEdit" class="popupCloseButton">X</div>
-      <form id="edit-todo">
+      <form id="edit-todo" autocomplete="off">
         <label for="inputNameEdit">Name:</label>
         <input id="inputNameEdit" type="text" value="" />
 
@@ -60,7 +60,7 @@
 
   <div id="popupRemoveTodo" class="popup remove">
     <div class="popupContent">
-      <form id="remove-todo">
+      <form id="remove-todo" autocomplete="off">
         <label for="deletetodo">Your deleted items can't be backed-up</label>
         <input id="deletetodo" type="submit" name="" value="Remove" />
       </form>
