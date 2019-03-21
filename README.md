@@ -1,3 +1,3 @@
 # Its-show-time
 
-![hey](.skeleton/img.png)
+![hey](./skeleton/img.png)
