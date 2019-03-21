@@ -74,8 +74,10 @@ var todoFunctions = {
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
 
-    doneTodos = todos.filter(todo => todo.done === true);
-    notDoneTodos = todos.filter(todo => todo.done === false);
+    let originalTodos = cloneArrayOfObjects(todos);
+
+    let doneTodos = todos.filter(todo => todo.done === true);
+    let notDoneTodos = todos.filter(todo => todo.done === false);
     originalTodos = todos.reverse();
     return filterString === "done"
       ? doneTodos
