@@ -56,6 +56,7 @@ input[type="checkbox"] {
   position: relative;
   width: 12vw;
   align-self: center;
+    cursor: pointer;
 }
 
 .todo-items {
@@ -105,6 +106,7 @@ li {
   border: 0;
   height: 50px;
   margin-top: 25%;
+    cursor: pointer;
 }
 
 li h3 {
@@ -125,6 +127,7 @@ li h3 {
   width: 50px;
   border: 0;
   height: 50px;
+    cursor: pointer;
 }
 
 li p {
